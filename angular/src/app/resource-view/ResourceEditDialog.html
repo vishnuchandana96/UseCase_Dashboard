@@ -1,0 +1,29 @@
+<div mat-dialog-content>
+
+    <mat-form-field>
+        <input matInput disabled  placeholder="Cluster Name" [(ngModel)]="data.resource.cluster_name">
+      </mat-form-field>
+  
+      <mat-form-field>
+          <input matInput disabled  placeholder="Application Name" [(ngModel)]="data.resource.application_name">
+        </mat-form-field>
+      
+    <mat-form-field>
+      <input matInput  placeholder="Employee ID" [(ngModel)]="data.resource.emp_id">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput  placeholder="Employee Name" [(ngModel)]="data.resource.emp_name">
+    </mat-form-field>
+  
+    
+    <mat-form-field>
+      <textarea matInput placeholder="Description " [(ngModel)]="data.resource.emp_description"></textarea>
+    </mat-form-field>
+    
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="Primary" [mat-dialog-close]="data.resource" cdkFocusInitial>Update</button>
+    <button mat-raised-button color="Warn" (click)=onNoClick()>Cancel</button>
+  </div>
+  

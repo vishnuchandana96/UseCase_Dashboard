@@ -1,0 +1,21 @@
+<div mat-dialog-content>
+    <mat-form-field>
+      <input matInput disabled  placeholder="Cluster Name" [(ngModel)]="data.application.cluster_name">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <!-- <textarea matInput placeholder="Application Name " [(ngModel)]="data.application.application_name"></textarea> -->
+      <input matInput  placeholder="Application Name" [(ngModel)]="data.application.application_name">
+    </mat-form-field>
+  
+    
+    <mat-form-field>
+      <textarea matInput placeholder="Description " [(ngModel)]="data.application.application_description"></textarea>
+    </mat-form-field>
+    
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="Primary" [mat-dialog-close]="data.application" cdkFocusInitial>Update</button>
+    <button mat-raised-button color="Warn" (click)=onNoClick()>Cancel</button>
+  </div>
+  

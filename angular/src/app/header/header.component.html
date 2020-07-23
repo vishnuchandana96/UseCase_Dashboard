@@ -1,0 +1,29 @@
+ <header>
+    <mat-toolbar fxLayout.xs="column">
+      <img alt="ibm Logo" src="assets/images/logo.png" />
+      <div class="menu">
+  <button mat-button [matMenuTriggerFor]="menu">Add</button>
+  <mat-menu #menu="matMenu">
+    <div class="example-button-row">
+    <button mat-menu-item routerLink="cluster">Cluster</button>
+    <button mat-menu-item routerLink="application">Application</button>
+    <button mat-menu-item routerLink="resource">Resource</button>
+    <button mat-menu-item routerLink="tpa" > TPA</button>
+    </div>
+  </mat-menu>
+  </div>
+  <div class="menu1">
+      <button mat-button [matMenuTriggerFor]="menu1">View</button>
+      <mat-menu #menu1="matMenu">
+        <div class="example-button-row">
+        <button mat-menu-item routerLink="cluster-view">Cluster</button>
+        <button mat-menu-item routerLink="application-view">Application</button>
+        <button mat-menu-item routerLink="resource-view">Resource</button>
+        <button mat-menu-item routerLink="tpa-view" > TPA</button>
+        </div>
+      </mat-menu>
+      </div>
+  </mat-toolbar>
+  </header>
+  
+  

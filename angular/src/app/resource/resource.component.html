@@ -1,0 +1,44 @@
+<div class="flex-container" fxLayout="row" fxFlex.lt-md="column">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Resource</mat-card-title>
+    </mat-card-header>
+    <form class="my-form" #resourceform="ngForm">
+       <mat-card-content>
+    <mat-form-field class="full-width">
+          <mat-select required placeholder="Cluster Name" name="cluster_name" [(ngModel)]="cluster_name">
+            <mat-option *ngFor="let cluster of clusterdata" [value]="cluster">
+              {{cluster}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-select required placeholder="Application Name" name="application_name" [(ngModel)]="application_name">
+            <mat-option *ngFor="let application of applicationdata" [value]="application">
+              {{application}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field> 
+
+        <mat-form-field class="full-width">
+          <mat-label>Employee Id</mat-label>
+          <input matInput required maxlength="6" placeholder="Employee Id" name="emp_id" [(ngModel)]="employee_id" />
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Employee Name</mat-label>
+          <input matInput required placeholder="Employee Name"  name="emp_name" [(ngModel)]="employee_name"/>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <textarea matInput placeholder="Description" name="emp_description" [(ngModel)]="employee_description"></textarea>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="example-button-row">
+          <button mat-raised-button matTooltip="Add Resource" color="primary" (click)=addResource(resourceform)>Save</button>
+        </div>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

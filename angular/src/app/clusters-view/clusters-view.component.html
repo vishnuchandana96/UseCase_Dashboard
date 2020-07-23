@@ -1,0 +1,69 @@
+<!-- <button class="export-button" mat-raised-button color="primary" (click)="exportTable()">Export</button>
+
+<button class="delete-button" mat-raised-button color="warn" (click)="removeSelectedRows()">Delete</button> -->
+
+<div fxLayout fxLayoutAlign="center center">
+  <mat-form-field style="top: 3em; margin: 0 0 0 3em;" fxFlex="15%">
+    <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Search for">
+  </mat-form-field>
+
+  <button class="export-button" mat-raised-button color="primary" (click)="exportTable()">Export</button>
+
+<button class="delete-button" mat-raised-button color="warn" (click)="removeSelectedRows()">Delete</button>
+
+</div>
+
+<table id="cluster" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="select">
+    <th mat-header-cell *matHeaderCellDef>
+      <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
+        [indeterminate]="selection.hasValue() && !isAllSelected()">
+      </mat-checkbox>
+    </th>
+    <td mat-cell *matCellDef="let row">
+      <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+        [checked]="selection.isSelected(row)">
+      </mat-checkbox>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="cluster_name">
+    <th mat-header-cell *matHeaderCellDef> Cluster Name </th>
+    <td mat-cell *matCellDef="let cluster"> {{cluster.cluster_name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="cluster_description">
+    <th mat-header-cell *matHeaderCellDef> Description </th>
+    <td mat-cell *matCellDef="let cluster"> {{cluster.cluster_description}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="cluster_date">
+    <th mat-header-cell *matHeaderCellDef> Date </th>
+    <td mat-cell *matCellDef="let cluster"> {{cluster.cluster_date}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="update">
+    <th class="update_th" mat-header-cell *matHeaderCellDef> Update </th>
+    <td class="update_td" mat-cell *matCellDef="let cluster">
+      <button mat-icon-button color="accent" (click)="editDialog(cluster)">
+        <mat-icon class="mat-18">system_update</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="delete">
+    <th class="delete_th" mat-header-cell *matHeaderCellDef> Delete </th>
+    <td class="delete_td" mat-cell *matCellDef="let cluster">
+      <button mat-icon-button color="warn" (click)="deleteCluster(cluster)">
+        <mat-icon class="mat-18">delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></tr>
+</table>
+
+<mat-paginator [pageSize]="5"></mat-paginator>

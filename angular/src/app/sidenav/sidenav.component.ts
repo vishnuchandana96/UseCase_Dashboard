@@ -1,0 +1,33 @@
+import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+
+@Component({
+  selector: 'app-sidenav',
+  templateUrl: './sidenav.component.html',
+  styleUrls: ['./sidenav.component.scss']
+})
+export class SidenavComponent implements OnInit {
+
+  constructor( private router : Router) { }
+
+  ngOnInit() 
+  {
+  }
+  
+cluster()
+ {
+   this.router.navigateByUrl("/cluster");
+ }
+ application()
+ {
+  this.router.navigateByUrl("/application");
+ }
+ resource()
+ {
+   this.router.navigateByUrl("/resource");
+ }
+ tpa()
+ {
+   this.router.navigateByUrl("/tpa");
+ }
+}

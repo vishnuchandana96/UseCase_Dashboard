@@ -1,0 +1,39 @@
+<div class="flex-container" fxLayout="row" fxFlex.lt-md="column">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Application</mat-card-title>
+    </mat-card-header>
+    <form class="my-form" #applicationform="ngForm">
+      <mat-card-content>
+
+        <mat-form-field class="full-width">
+          <mat-select required placeholder="Cluster Name" name="cluster_name" [(ngModel)]="cluster_name">
+            <mat-option *ngFor="let cluster of clusterList" [value]="cluster">
+              {{cluster}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>Application Name</mat-label>
+          <input matInput required name="application_name" [(ngModel)]="application_name" />
+        </mat-form-field>
+        
+        <mat-form-field class="full-width">
+          <textarea matInput placeholder="Description" name="application_description"
+            [(ngModel)]="application_description"></textarea>
+        </mat-form-field>
+
+      </mat-card-content>
+      <mat-card-actions>
+
+          <div class="example-button-row">
+
+              <button mat-raised-button matTooltip="Add Application" (click)=addApplication(applicationform)
+                color="primary">Save</button></div>
+       
+      </mat-card-actions>
+    </form>
+  </mat-card>
+
+</div>

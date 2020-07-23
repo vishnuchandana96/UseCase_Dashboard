@@ -1,0 +1,36 @@
+<div mat-dialog-content>
+
+    <mat-form-field>
+        <input matInput disabled placeholder="Cluster Name" [(ngModel)]="data.tpa.cluster_name">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput disabled placeholder="Application Name" [(ngModel)]="data.tpa.application_name">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="TPA" [(ngModel)]="data.tpa.tpa">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="TPA Status" [(ngModel)]="data.tpa.tpa_status">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="TPA PD" [(ngModel)]="data.tpa.tpa_pd">
+    </mat-form-field>
+
+
+
+    <mat-form-field>
+        <input matInput placeholder="Delivery Date" [matDatepicker]="picker" [(ngModel)]="data.tpa.delivery_date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+
+    </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-raised-button color="Primary" [mat-dialog-close]="data.tpa" cdkFocusInitial>Update</button>
+    <button mat-raised-button color="Warn" (click)=onNoClick()>Cancel</button>
+</div>

@@ -1,0 +1,21 @@
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput placeholder="Cluster Name" [(ngModel)]="data.cluster.cluster_name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Cluster Description" [(ngModel)]="data.cluster.cluster_description"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput required [matDatepicker]="picker" [(ngModel)]="data.cluster.cluster_date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker touchUi #picker></mat-datepicker>
+
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="Primary" [mat-dialog-close]="data.cluster" cdkFocusInitial>Update</button>
+  <button mat-raised-button color="Warn" (click)=onNoClick()>Cancel</button>
+</div>

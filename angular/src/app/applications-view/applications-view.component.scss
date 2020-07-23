@@ -1,0 +1,92 @@
+table {
+  width: 65%;
+ // margin-top: 200px;
+ // margin-left: 170px;
+ margin-left: auto;
+ margin-right: auto;
+ margin-bottom: 60px;
+}
+#application
+{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+}
+#application td, #application th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+
+#application tr:hover {background-color: #ddd;
+}
+
+#application th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: gray;
+  color: white;
+  font-size: 20px;
+}
+button{
+  // text-align: center;
+  // background-color: #e7e7e7; 
+  // margin-right: 20px;
+  justify-content: center;
+  
+}
+// button.export-button
+//  {
+//   margin-left: 870px;
+//   margin-top: 150px;
+//   margin-bottom: 20px;
+//  }
+//  button.delete-button
+//  {
+//   margin-left: 10px;
+//  }
+
+button.export-button
+ {
+  margin-left: 450px;
+  margin-top: 120px;
+  margin-bottom: 25px;
+ }
+ button.delete-button
+ {
+  margin-left: 10px;
+  margin-top: 95px;
+ }
+
+ .mat-header-cell {
+  //color: rgba(0,0,0,.54);
+  background-color: gray;
+  height: 30px;
+}
+.mat-cell, .mat-footer-cell
+{
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.mat-checkbox
+{
+padding: 0px 0px 20px 10px;
+margin-left: auto;
+margin-right: auto;
+}
+
+// .mat-paginator
+// {
+//   position: absolute;
+//   font-size : 16px;
+//   margin-left: 650px;
+//   font-weight: bold;
+// }
+
+.mat-paginator
+{
+  font-size : 14px;
+  font-weight: bold;
+  margin-right: 450px;
+
+}

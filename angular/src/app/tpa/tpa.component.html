@@ -1,0 +1,67 @@
+<div class="flex-container" fxLayout="row" fxFlex.lt-md="column">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title>TPA Management</mat-card-title>
+        </mat-card-header>
+        <form class="my-form" #tpaForm="ngForm">
+            <mat-card-content>
+
+                <mat-form-field class="full-width">
+                    <mat-select required placeholder="Cluster Name" name="cluster_name" [(ngModel)]="cluster_name">
+                        <mat-option *ngFor="let cluster of clusterdata" [value]="cluster">
+                            {{cluster}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-select required placeholder="Application Name" name="application_name"
+                        [(ngModel)]="application_name">
+                        <mat-option *ngFor="let application of applicationdata" [value]="application">
+                            {{application}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>TPA</mat-label>
+                    <input matInput required maxlength="6" name="tpa" [(ngModel)]="tpa" />
+                </mat-form-field>
+
+
+                <mat-form-field>
+                    <mat-label>TPA Status</mat-label>
+                    <mat-select required name="tpa_status" [(ngModel)]="tpa_status">
+
+                        <mat-option *ngFor="let status of statusList" [value]="status">
+                            {{status}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+
+                <mat-form-field class="full-width">
+                    <mat-label>TPA PD</mat-label>
+                    <input matInput required name="tpa_pd" [(ngModel)]="tpa_pd" />
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Delivery Date</mat-label>
+                    <input matInput required [matDatepicker]="picker" placeholder="Choose a date" name="delivery_date"
+                        [(ngModel)]="delivery_date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker touchUi #picker></mat-datepicker>
+
+                </mat-form-field>
+
+            </mat-card-content>
+            <mat-card-actions>
+                <div class="example-button-row">
+
+                    <button mat-raised-button matTooltip="Add TPA" (click)=addTPA(tpaForm) color="primary">Save</button>
+
+                </div>
+
+            </mat-card-actions>
+        </form>
+    </mat-card>
+</div>
